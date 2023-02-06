@@ -45,9 +45,10 @@
         echo "З днем народжуння!";
     }
     else if($month < 0 || $day < 0){
+        $count = cal_days_in_month(CAL_GREGORIAN,$arrNow[1],$arrNow[0]);
         $tempMonth = 12 - abs($month);
-        //$tempDay = 
-        echo "До дня народження залишилося: ".$tempMonth." м. ".$day." д. </br></br>";
+        $tempDay = $count - abs($day);
+        echo "До дня народження залишилося: ".$tempMonth." м. ".$tempDay." д. </br></br>";
     }
     else{
         echo "До дня народження залишилося: ".$month." м. ".$day." д. </br></br>";
